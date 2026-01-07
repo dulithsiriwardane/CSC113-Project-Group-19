@@ -2,7 +2,7 @@
     $conn = mysqli_connect("localhost", "root", "1234", "movie");
     $password = password_hash("1234",PASSWORD_DEFAULT);
  
-    $sql = "insert into users (email,hashed_password,role) values('test@gmail.com','$password','admin');";
+    $sql = "insert into users (name,email,hashed_password,role) values('test_user','test@gmail.com','$password','admin');";
     
     try {
         mysqli_query($conn,$sql);
@@ -14,4 +14,4 @@
     echo "$password";
 ?>    
 
-?>      
+   

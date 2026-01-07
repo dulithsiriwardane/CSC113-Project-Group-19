@@ -30,7 +30,7 @@
 
     // Email password validation
     try {
-        $query = "SELECT email, hashed_password FROM users WHERE email = :u LIMIT 1";
+        $query = "SELECT name, email, hashed_password FROM users WHERE email = :u LIMIT 1";
         $stmt = $pdo->prepare($query);
 
         // Execute the Query
@@ -42,6 +42,7 @@
         if ($user && password_verify($password, $user['hashed_password'])) {
             // Session data about email for later use in for front-end and back-end
             // ----- should clear these on logout.php 
+            $_SESSION['name'] = $user['name'];
             $_SESSION['email'] = $user['email'];
 
             // Successful login attempt

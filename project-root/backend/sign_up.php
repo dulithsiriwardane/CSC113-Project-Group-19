@@ -54,6 +54,10 @@
             ':role' => $user_type        
         ]);
         
+        // Add to session values
+        $_SESSION['name'] = $user['name'];
+        $_SESSION['email'] = $user['email'];
+        
     } catch (Throwable $e) {
         error_log("Sign-Up error: " . $e->getMessage());
 

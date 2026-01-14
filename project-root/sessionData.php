@@ -32,7 +32,7 @@
 //         "role" => $_SESSION['role']
 //     ]
 // ]);
-// ?>
+?>
 // fetch("http://localhost/api/me.php", {
 //   credentials: "include"
 // })

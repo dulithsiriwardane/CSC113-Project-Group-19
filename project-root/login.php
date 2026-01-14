@@ -45,7 +45,8 @@
     // Success
     echo json_encode([
         "status" => "success",
-        "email"  => $row['email']
+        "email"  => $row['email'],
+        "name" => $_SESSION['name']
     ]);
 
 ?>

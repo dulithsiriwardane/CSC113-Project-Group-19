@@ -22,7 +22,8 @@ function Login() {
       .then(data => {
         if (data.status === "success") {
           setMessage("Login successful");
-          alert(data.email);
+          // Note this name is a session variable (example for accessing session variable data)
+          alert(`Hello ! ${data.name}`);
         } else {
           setMessage(data.message);
         }

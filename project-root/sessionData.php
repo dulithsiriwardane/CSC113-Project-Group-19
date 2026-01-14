@@ -33,4 +33,13 @@ echo json_encode([
     ]
 ]);
 //////:
-?>
+/*. */
+?>fetch("http://localhost/api/me.php", {
+  credentials: "include"
+})
+  .then(res => res.json())
+  .then(data => {
+    if (data.loggedIn) {
+      setUser(data.user);
+    }
+  });

@@ -47,6 +47,8 @@
     $test_query = "SELECT * FROM users WHERE email = '$email'";
     $test_result = mysqli_query($conn, $test_query);
 
+    // TODO :: Check this for what is the return
+    // might not work
     if ($test_result){
         echo json_encode(["status" => "error", "message" => "Already Signed"]);
         exit;

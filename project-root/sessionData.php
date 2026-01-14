@@ -13,33 +13,32 @@
     ]);
     
     //////////////
-    <?php
-session_start();
-header("Content-Type: application/json");
+//     <?php
+// session_start();
+// header("Content-Type: application/json");
 
-if (!isset($_SESSION['user_id'])) {
-    echo json_encode([
-        "loggedIn" => false
-    ]);
-    exit;
-}
+// if (!isset($_SESSION['user_id'])) {
+//     echo json_encode([
+//         "loggedIn" => false
+//     ]);
+//     exit;
+// }
 
-echo json_encode([
-    "loggedIn" => true,
-    "user" => [
-        "id" => $_SESSION['user_id'],
-        "name" => $_SESSION['username'],
-        "role" => $_SESSION['role']
-    ]
-]);
-//////:
-/*. */
-?>fetch("http://localhost/api/me.php", {
-  credentials: "include"
-})
-  .then(res => res.json())
-  .then(data => {
-    if (data.loggedIn) {
-      setUser(data.user);
-    }
-  });
+// echo json_encode([
+//     "loggedIn" => true,
+//     "user" => [
+//         "id" => $_SESSION['user_id'],
+//         "name" => $_SESSION['username'],
+//         "role" => $_SESSION['role']
+//     ]
+// ]);
+// ?>
+// fetch("http://localhost/api/me.php", {
+//   credentials: "include"
+// })
+//   .then(res => res.json())
+//   .then(data => {
+//     if (data.loggedIn) {
+//       setUser(data.user);
+//     }
+//   });

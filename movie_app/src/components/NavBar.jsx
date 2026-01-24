@@ -1,4 +1,6 @@
-export default function NavBar() {
+export default function NavBar({query, setQuery, searchMovies}) {
+  const API_KEY = "875a977ab94cd7108c47a3bed943830f";
+
   return (
     <div className="font-poppins bg-[#0B090A] flex justify-between items-center px-26 py-4">
       <ul className="text-[#ECF0F1] flex justify-between items-center gap-8">
@@ -10,9 +12,14 @@ export default function NavBar() {
         <input
           type="text"
           placeholder="Search for movies and shows"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
           className="focus:outline-none placeholder:text-[#797979] text-[#ECF0F1] w-64"
         />
-        <button className="w-10 h-10 bg-[#E74C3C] rounded-xl flex items-center justify-center hover:cursor-pointer">
+        <button
+          className="w-10 h-10 bg-[#E74C3C] rounded-xl flex items-center justify-center hover:cursor-pointer"
+          onClick={searchMovies}
+        >
           <svg
             width="20px"
             height="20px"

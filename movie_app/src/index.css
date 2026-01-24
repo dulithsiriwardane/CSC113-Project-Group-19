@@ -7,3 +7,26 @@
 @theme {
   --font-poppins: poppins, "sans-serif";
 }
+
+/* 1. Standard approach (Firefox) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #384148 #252b30; /* thumb color | track color */
+}
+
+/* 2. Webkit approach (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  width: 8px; /* width of the vertical scrollbar */
+  height: 8px; /* height of the horizontal scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: #161a1d; /* The area the thumb slides in */
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #161a1d; /* The actual draggable bar */
+  border-radius: 10px;
+  border: 2px solid #161a1d; /* creates padding around the thumb */
+}
